@@ -1,0 +1,224 @@
+@import '../../styles/heading.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/text.scss';
+
+
+.main-box {
+
+    height: 467px;
+    width: 302px;
+
+    border-radius: 4px;
+    padding: 16px;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    gap: 16px;
+
+    width: 302px;
+    height: 467px;
+
+    border: 1px solid #E9E9E9;
+    box-shadow: 0px 2px 4px rgba(5, 7, 32, 0.08);
+    border-radius: 4px;
+    
+
+
+}
+
+
+.top-box {
+    height: 306px;
+    width: 270px;
+    left: 16px;
+    top: 16px;
+    border-radius: 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+
+    width: 270px;
+    height: 306px;
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+
+}
+
+.icon-box {
+    display: flex;
+    flex-direction: row;
+    width:270px;
+    height:40px;
+    width: 270px;
+    height: 40px;
+
+    img {
+        height: 24px;
+        width: 24px;
+    }
+
+    app-badge-sale {
+        margin-right: 6px;
+    }
+
+}
+
+.icon24-box {
+    height: 40.00000762939453px;
+    width: 77.18309783935547px;
+    left: 192.81640625px;
+    top: 0px;
+    border-radius: 0px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0px;
+
+    margin-left:6px;
+
+    gap:6px
+}
+
+.heart-icon {
+    margin-left:6px;
+    cursor: pointer;
+}
+
+.beer-img-box {
+    background-size:contain; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    width:270px; 
+    height:160px; 
+    display: flex; 
+    cursor: pointer;
+}
+.beer-img-box:hover {
+    background-size:contain; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    width:270px; 
+    height:160px; 
+    display: flex; 
+    @include color-success-green2;
+    
+}
+
+.title-box {
+    height: 78px;
+    width: 270px;
+    left: 0px;
+    top: 228px;
+    border-radius: 0px;
+
+    width: 270px;
+    height: 78px;
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+
+    p {
+        @include color-dark-grey;
+        @include text-caption;
+        margin:0;
+    }
+
+    div { 
+        @include h-5;
+    }
+
+}
+
+.bottom-box {
+    height: 115px;
+    width: 270px;
+    left: 16px;
+    top: 336px;
+    border-radius: 0px;
+
+    height: 115px;
+    width: 270px;
+    left: 16px;
+    top: 336px;
+    border-radius: 0px;
+
+
+}
+
+.price-box {
+    width: 270px;
+height: 59px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+
+.euro-box{
+    align-items: center;
+    p { margin-top:-5px; 
+        margin-left:5px }
+}
+
+.heart-icon:active {
+    padding:3px;
+    border-radius: 4px;
+    @include border-color-gaduation;
+    @include color-primary-background;
+
+}
+
+.content-box {
+    margin-top:-20px
+}
+
+input {
+    width:40px;
+    height: 40px;
+    border-radius: 4px;
+    text-align: center;
+    border:none;
+    border:1px solid black;
+    margin-top:0;
+}
+
+button {
+    height: 40px;
+    width: 151px;
+    left: 0px;
+    top: 0px;
+    border-radius: 4px;
+    border:none;
+    @include color-white;
+    @include color-primary-background;
+    margin-left:16px;
+
+}
+
+.button-box { 
+    align-items: center;
+    display:flex;
+    margin-top:12px;
+}
+

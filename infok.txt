@@ -1,0 +1,40 @@
+
+sale, sold out - random
+sold out - nincs rajta ár
+
+ngprime - scroll
+
+menet:
+
+-ui - observable
+
+componensek generálása
+page - compoka használ
+
+
+30 sör egy tömbbe - működést ebbő a tömbből , szűrést is
+
+routing - statemanagement - mikor milyen paget szeretnénk látni
+
+ezután - hogyan kommunikáljon ez a szerverrel
+
+
+service- nagy töb - 30 sörr -lokálba dolgozzunk ezzel - ezen belül filter stb
+1 http hivás az all beerekre
+
+
+combine latest rxjs - 2 streamet tud összefűzni - 1ik szerverkérdés - 2 filter ami továbbszűr - ezt a kettőt fűzzük össze
+
+Another way:
+uj filter - uj lekérdezés 
+először egyen egy olyan data stream - minek kell látszódnia - et a subject kell hivogatni - eztkéne a végére hagyni - lenehezbb része az rxjs
+legyen stream ami adat
+aktuálisan kiválasztott sür - data stream
+kosár data stream
+
+adatkezelés -
+
+beers$ = [] ebbe vegyünk fel adatot
+
+angular nyelv pl templateben cimke - attól függ mire van állitva, minden a serviceből jön, semmi sincs a htmlben beégetve - az a nehéz hogy ui-ban ne essen szét semmi a karakerek miatt
+

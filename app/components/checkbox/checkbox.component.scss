@@ -1,0 +1,45 @@
+@import "../../styles/colors.scss";
+
+.checkbox-box {
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+input[type=checkbox]{
+    display:block;
+    height:24px;
+    width: 24px;
+    -webkit-appearance: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    @include border-color-dark-grey;
+
+}
+
+
+input[type=checkbox]:not(:checked) {
+    @include background-color-white ;
+    @include border-line-color-dark-grey;
+    border-radius: 1px;
+    &:hover{
+        @include border-line-color-accent-orange;
+    }
+}
+
+
+
+input[type=checkbox]:checked {
+    @include background-color-white ;
+    @include border-line-color-black;
+    border-radius: 1px;
+    // checkbox inner icon is visible only locally:
+    background-image: url(../../../assets/checkbox.svg); 
+
+    background-size: 12px 10px;
+    &:focus{
+        @include border-line-color-accent-orange;
+    }
+
+}

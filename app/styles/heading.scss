@@ -1,0 +1,10 @@
+@mixin h-1 { font-size: 28px; line-height:36px; font-weight:900} //data from PLP page - figma
+
+@mixin h-2 { font-size: 24px; line-height:32x; font-weight:900}
+
+@mixin h-3 { font-size: 20px; line-height:28px; font-weight:600 }
+
+@mixin h-4 { font-size: 18px; line-height:28px; font-weight:700; text-transform: uppercase; }
+
+@mixin h-5 { font-size: 16px; line-height:28px; font-weight:900 }
+@mixin h-6 { font-size: 14px; line-height:24px; font-weight:900 }

@@ -1,0 +1,32 @@
+@mixin text-standard {  font-size: 16px; line-height:24px; font-weight:400}
+@mixin text-standard-uppercase  {  font-size: 16px; line-height:24px; font-weight:400; text-transform: uppercase;}
+
+@mixin text-semi-bold { font-size: 16px; line-height:24px; font-weight:600 }
+
+@mixin text-uppercase { font-size: 16px; line-height:24px; font-weight:400; text-transform: uppercase; }
+
+@mixin text-standard-link { font-size: 16px; line-height:24px; font-weight:400  }
+
+@mixin text-caption { font-size: 14px; line-height:24px; font-weight:400 }
+
+@mixin text-caption-uppercase { font-size: 14px; line-height:24px; font-weight:400; text-transform: uppercase; }
+
+@mixin text-caption-link { font-size: 14px; line-height:24px; font-weight:400}
+
+@mixin text-caption-bold { font-size: 16px; line-height:24px; font-weight:700 }
+
+@mixin text-caption-bold-uppercase { font-size: 14px; line-height:24px; font-weight:700; text-transform: uppercase;}
+
+@mixin text-caption-bold-total-uppercase { font-size: 18px; line-height:24px; font-weight:700; text-transform: uppercase;}
+
+@mixin text-caption-small { font-size: 12px; line-height:20px; font-weight:400 }
+
+@mixin text-caption-small-bold { font-size: 12px; line-height:20px; font-weight:700}
+
+@mixin button-label { font-size: 14px; line-height:24px; font-weight:700 }
+
+@mixin color-beige {  color: #7B7E82; }
+
+@mixin border-color-beige { border-color: #7B7E82; }
+
+@mixin border-beige { border: 1px solid #7B7E82; }

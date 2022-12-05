@@ -1,0 +1,126 @@
+
+  <div *ngIf="beerService.shoppingCart.length > 0">
+    <h2 mt-5>Shopping Cart</h2>
+  </div> 
+
+  <div *ngIf="beerService.shoppingCart.length == 0">
+    <p style="margin:10px 0px 0px 100px;">Your shopping cart is empty. </p> <br>
+    <span style="margin:10px 0px 0px 100px;"> Look around in our <h2 class="link" (click)="onNavigateToStore()">Store</h2> </span>
+  </div> 
+
+  <section class="row-xs-12">
+
+
+  <div class="shopping-cart-box my-5 pb-5 col-8" *ngFor="let beer of beerService.shoppingCart; let i = index;">
+    <div class="row">
+
+      <div class="col-xs-12 col-lg-2">
+        <p (click)="onNavigate(beer)" class="product-link">Product</p>
+        <div class="img-box"><img src="{{ beer.image_url }}" alt="beer image" class="img-fluid w-80">
+        </div> 
+      </div>
+      <div class="col-xs-12 col-lg-2">
+        <p> {{beer.name}}</p>
+        <div class="product-num"> Product No.: {{ beer.target_fg }} </div>
+      </div>
+
+      <div class="col-xs-12 col-lg-2 ">
+        <p>Contributor</p>
+        <div class="tagline">Fuerst Wiacek</div>
+      </div>
+
+      <div class="col-xs-12 col-lg-1 me-3">
+        <p>Price</p>
+        <p> € {{ beer.abv }}</p>
+        <div class="subtitle">Excl. VAT</div>
+      </div>
+
+      <div class="col-xs-12 col-lg-2 mx-5">
+        <p class="quantity">Quantity</p>
+        <div class="counter-input-box" [formGroup]="counterForm" style="margin-left:-100px;">
+          <a class="delete" (click)="deleteFromCart()"> <img src="./assets/minus.svg"
+            alt="delete">
+          </a>
+          <input type="text" placeholder="1" formControlName="quantity" class="text-center"/>
+          <a (click)="addUpToCart()"
+          class="add">
+          <img src="./assets/plus.svg" alt="add">
+        </a>
+      </div>  
+      </div>
+
+      <div class="col-xs-12 col-lg-1 ms-3">
+        <p>Subtotal</p>
+        <p> € {{ beer.abv }} </p>
+        <div class="subtitle">Excl. VAT</div>
+      </div>
+
+      <div class="delete-box">
+        <img src="./assets/delete.svg" alt="delete" class="delete-icon" (click)="deleteFromList(i)" />
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="main-summary-box col-4">
+    <div class="summary-box col-lg-3 col-xs-12" *ngIf="beerService.shoppingCart.length > 0">
+      <h4 class="my-4">Summary</h4>
+      <div class="item-box">
+        <h6>Free shipping from </h6>
+        <h6>€500</h6> 
+      </div>
+      <hr>
+      <div class="item-box">
+        <small>Items:</small>
+         <!-- static yet, but the data would come from beerService -->
+        <small>€ 8.2 </small>
+      </div>
+    
+      <div class="item-box">
+        <small>VAT:</small>
+        <small>€ 2 </small>
+      </div>
+      <div class="item-box">
+        <small>Shipping & handling:</small>
+        <small>€ 10 </small>
+      </div>
+      <hr>
+    
+      <div class="item-box">
+        <h4>Order Total</h4>
+        <!-- static yet, but the data would come from ngModel -->
+        <h4>€ 21.45</h4>
+      </div>
+    
+        <!-- button is static -->
+      <button>
+          <img src="./assets/cartwhite.svg" alt="shopping-cart"  />Checkout
+      </button>
+    </div>
+  </div>
+
+</section>
+
+
+
+  <div class="row bottom-box mt-5" *ngIf="beerService.shoppingCart.length > 0">
+    <h3>You might also like...</h3>
+    <!-- data from wishlist, but the paginator is missing yet -->
+    <div class="like-box">
+      <div *ngFor="let beer of beerService.wishlist" >
+          <app-beer-item [beer]="beer" [price]="beer.abv" [image_url]="beer.image_url" [name]="beer.name" [tagline]="beer.tagline" ></app-beer-item>
+      </div>
+  </div>
+  </div>
+
+  
+
+<!-- 
+It would be an alert message in case of the shoppingCart is empty ..
+
+<ng-template #infoText>
+  <div class="error-message">
+  Shopping cart is empty! ( ... yet ;) )
+  </div>
+</ng-template>  -->

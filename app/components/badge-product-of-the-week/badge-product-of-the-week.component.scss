@@ -1,0 +1,26 @@
+@import '../../styles/colors.scss';
+@import '../../styles/text.scss';
+
+
+div {
+    box-sizing: border-box;
+    display: flex;
+    padding: 1px 10px;
+    gap: 10px;
+    width: 131px;
+    height: 25px;
+    border-radius: 4px;
+  
+    @include background-color-white;
+    @include border-color-black;
+    
+  }
+
+  p {
+
+    margin: 0 auto;
+    @include text-caption-small-bold;
+    @include color-black;
+
+  
+  }

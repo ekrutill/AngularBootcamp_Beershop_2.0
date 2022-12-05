@@ -1,0 +1,21 @@
+@import '../../styles/colors.scss';
+
+.modal-box {
+    height: 40px;
+    max-width: 1340px;
+    border-radius: 4px;
+    padding: 8px 16px 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    @include color-success-green2;
+
+}
+
+.link {
+    @include color-primary-text;
+    cursor: pointer;
+}
+
+.delete {
+    cursor: pointer;
+}

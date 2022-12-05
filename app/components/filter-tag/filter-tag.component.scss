@@ -1,0 +1,30 @@
+@import '../../styles/colors.scss';
+@import '../../styles/text.scss';
+
+div {
+    box-sizing: border-box;
+    height: 40px;
+    min-width:89px;
+    width: 178px;
+    border-radius: 0px;
+    padding: 8px 16px 8px 16px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    margin: 0px 8px 0px 8px;
+
+    justify-content: space-around;
+
+
+    @include border-color-black;
+    @include text-standard-uppercase;
+    @include button-label;
+    @include background-color-white;
+
+    p {margin-top: 10px;}
+
+
+
+}

@@ -1,0 +1,23 @@
+
+        <div class="container-fluid">
+
+            <div class="heading-box"> 
+                <h1>All Beers</h1>
+            </div>
+
+        
+            <app-filter-bar></app-filter-bar>
+
+            <div class="main">
+                <div class="main-box">
+                    <!-- <div *ngFor="let beer of beerService.Beers | searchFilter: beerService.query" > another solution for filtering   -->
+                    <div *ngFor="let beer of beerService.Beers | searchFilter:query:'name' | searchFilter:value:'name'; else loadingSpinner" >
+                        <app-beer-item [beer]="beer" [price]="beer.abv" [image_url]="beer.image_url" [name]="beer.name" [tagline]="beer.tagline" ></app-beer-item>
+                    </div>
+                    
+                         <ng-template #loadingSpinner> 
+                                <app-loading-spinner></app-loading-spinner>
+                         </ng-template>
+                </div>
+            </div>
+        </div>

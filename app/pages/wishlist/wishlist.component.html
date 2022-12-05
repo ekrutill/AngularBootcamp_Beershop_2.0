@@ -1,0 +1,53 @@
+
+    <div *ngIf="beerService.wishlist.length == 0">
+            <p class="empty">Your wishlist is empty.</p>
+    </div> 
+
+    <div *ngFor="let beer of beerService.wishlist; let i = index">
+     <div class="row top-box p-3 m-3">
+        
+        <div class="title-box col-lg-7 col-xs-12">
+
+            <div class="img-box">
+                <img src="{{ beer.image_url }}" alt="beer image" class="img-fluid">
+            </div>
+            
+            <div class="text-box">
+                <div class="top-title-box">
+                    <h1> {{ beer.name }} </h1>
+                    <div>
+                    <img src="./assets/delete.svg" alt="delete" class="delete-icon" (click)="deleteFromList(i)" />
+                    <img src="./assets/share.svg" alt="let's share!" />
+                    </div>
+                </div>
+                <p class="tagline">{{ beer.tagline }}</p>
+                <p class="description">{{beer.description}}</p>
+                <div class="shipping-price-box"> 
+
+
+                    <h2>€{{ beer.abv }}</h2>
+                    <div class="plus-cost-box">Plus <a class="shipping">shipping costs</a></div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div class="summary-box col-lg-3 col-xs-12">
+            <div class="description-box">
+                <h2>Brewer's tip:</h2>
+                <div class="detailed-list">
+                  <br>
+                  <div><p>{{ beer.brewers_tips }}</p> </div>
+                  <br>
+                  <div><p>ABV(% ALCOHOL): {{ beer.abv }}%</p></div>
+                  <br>
+                  <br>
+                </div>
+            </div>
+        </div>   
+    </div>
+    <br>
+    <hr>
+ </div>
+

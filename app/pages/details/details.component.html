@@ -1,0 +1,91 @@
+<div class="details-box p-2" *ngIf="beerService.selectedBeer">
+
+  <div *ngIf="isAddedToCart">
+    <app-modal></app-modal>
+  </div>
+
+    <div class="row top-box">
+        
+    
+        <div class="title-box col-lg-7 col-xs-12">
+
+            <div class="img-box">
+                <img src="{{ beerService.selectedBeer.image_url }}" alt="beer image" class="img-fluid">
+            </div>
+            
+            <div class="text-box">
+                <div class="top-title-box">
+                    <h1> {{ beerService.selectedBeer.name }} </h1>
+                    <div >
+                    <img src="./assets/heart.svg" alt="to wishlist" class="heart-icon" (click)="addToWishlist()" >
+                    <img src="./assets/share.svg" alt="let's share!" />
+                    </div>
+                </div>
+                <p class="tagline">{{ beerService.selectedBeer.tagline }}</p>
+                <p class="description">{{beerService.selectedBeer.description}}</p>
+                <div class="shipping-price-box"> 
+                    <!-- Data from abv - as a price of the product -->
+                    <h2>€{{ beerService.selectedBeer.abv }}</h2>
+                    <div class="plus-cost-box">Plus <a class="shipping">shipping costs</a></div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div class="summary-box col-lg-3 col-xs-12">
+            <div class="total-box">
+              <p>Delivery time appr. 3-7 workdays</p>
+              <h4>Total</h4>
+              <h2>€ {{ beerService.selectedBeer.abv }}</h2>
+              <p>Prices incl. VAT plus <a class="shipping">shipping costs</a> </p>
+            </div>
+
+            <div class="counter-box" [formGroup]="counterForm">
+
+                <div class="counter-input-box">
+
+                <a class="delete" (click)="deleteFromCart()"> <img src="./assets/minus.svg"
+                  alt="delete">
+                </a>
+
+                <input type="text" placeholder="1" formControlName="quantity" class="text-center"/>
+
+                <a (click)="addUpToCart()"
+                class="add">
+                <img src="./assets/plus.svg" alt="add">
+              </a>
+
+            </div>
+
+              <button (click)="submitToCart()">
+                <img src="./assets/cartwhite.svg" alt="shopping-cart"  />Add to
+                cart
+              </button>
+
+            </div>
+
+        </div>
+    </div>
+
+<div class="row bottom-box">
+    <div class="beer-facts-box col-lg-6 col-xs-12">
+        <div class="description-box">
+            <h2>Beer Facts</h2>
+            <div class="detailed-list">
+              <div><p class="me-5">Ingredients:</p> {{maltArray}} ,{{hopsArray}}, {{yeastArray}}</div>
+              <hr>
+              <div><p>Tagline:</p> {{ beerService.selectedBeer.tagline }}</div>
+              <hr>
+              <div><p>ABV(% ALCOHOL):</p>{{ beerService.selectedBeer.abv }}%</div>
+              <hr>
+              <div><p>First Brewed:</p>{{ beerService.selectedBeer.first_brewed }}</div>
+              <hr>
+            </div >
+          </div>
+    </div>
+</div>
+</div>
+
+
+  

@@ -1,0 +1,25 @@
+@import '../../styles/colors.scss';
+@import '../../styles/text.scss';
+
+
+div {
+
+    display: flex;
+    text-align: center;
+    padding: 1px 11px;
+    gap: 10px;
+    width: 45px;
+    height: 25px;
+    border-radius: 4px;
+  
+    @include color-accent-violet;
+  }
+
+
+p {
+    margin: 0 auto;
+    @include text-caption-small-bold;
+    @include color-white;
+  
+  }
+  

@@ -1,0 +1,47 @@
+
+
+<div class="container-fluid main-box">
+    <div class="top-box"  >
+        <div class="icon-box">
+            <app-badge-sale></app-badge-sale>
+            <app-badge-product-of-the-week></app-badge-product-of-the-week>
+            <div class="icon24-box">
+                <img src="./assets/compare.svg" alt="to compare" >
+                <img src="./assets/heart.svg" alt="to wishlist" class="heart-icon" (click)="addToWishlist(beer!)" >
+            </div>
+        </div>
+        
+        <div class="beer-img-box" style="background-image: url({{image_url}})" (click)="selectedBeer(beer!)"></div>
+        <div class="title-box">
+            <p>{{ tagline | searchFilter: beerService.query }}</p>
+            <div>{{ name | searchFilter: beerService.query }}</div>
+            <p>Fuerst Wiacek</p>
+        </div>
+    </div>
+
+
+    <div class="bottom-box" [formGroup]="counterForm">
+        <div class="price-box">
+            <div class="d-flex flex-direction-row euro-box"><h2> € {{ price }} </h2> <p> € {{ price! - price! / 2 }}</p></div>
+            <div class="d-flex flex-direction-row content-box"> <div class="me-1">Content</div><p>0.44 Litre</p></div>
+          </div>
+      
+          <div class="button-box">
+            <input type="text" placeholder="1" formControlName="quantity"/>
+            <button (click)="addToCart(beer!)">
+              <img src="./assets/cartwhite.svg" alt="shopping-cart"  />Add to
+              cart
+            </button>
+
+          </div>
+    </div>
+</div>
+
+
+  
+
+
+
+
+
+

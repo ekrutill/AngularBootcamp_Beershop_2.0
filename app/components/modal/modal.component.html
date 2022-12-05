@@ -1,0 +1,4 @@
+<div class="modal-box mb-5" *ngIf="beerService.selectedBeer; isVisible">
+    <div>You added {{ beerService.selectedBeer.name }} in your <a (click)="onNavigate()" class="link">shopping cart</a></div>
+    <a class="delete" (click)="!isVisible"><img src="../../../assets/x.svg" alt="X"></a>
+</div>

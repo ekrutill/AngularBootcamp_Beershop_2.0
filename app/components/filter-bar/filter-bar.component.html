@@ -1,0 +1,144 @@
+
+<div class="filter-bar-box">
+    <div class="filterby">
+        <img src="./assets/filter.svg" alt="filtering" class="me-1">
+        <div> Filter by</div> 
+    </div>
+    <div class="filterig-box mt-3">
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                </mat-panel-title>
+                <mat-panel-description>
+                  <!-- Currently I am {{panelOpenState ? 'open' : 'closed'}} -->
+                  <p>Beer styles</p>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <app-checkbox [name]="'Ipa'" (changeCheckbox)="filteringBeerStyles()"></app-checkbox>
+              <app-checkbox [name]="'Porter & Staut'" (changeCheckbox)="filteringBeerStyles()"></app-checkbox>
+              <app-checkbox [name]="'Lager & Helles'" (changeCheckbox)="filteringBeerStyles()"></app-checkbox>
+              <app-checkbox [name]="'Sour Ale & Wild Ale'" (changeCheckbox)="filteringBeerStyles()"></app-checkbox>
+              <app-checkbox [name]="'Pale ale'" (changeCheckbox)="filteringBeerStyles()"></app-checkbox>
+            </mat-expansion-panel>
+        </mat-accordion>
+        
+        
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                </mat-panel-title>
+                <mat-panel-description>
+                  <p>Method</p>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <app-checkbox [name]="'Mash Temp'" (changeCheckbox)="filteringMashTempMethod()"></app-checkbox>
+              <app-checkbox [name]="'Fermentation'" (changeCheckbox)="filteringFermentationMethod()"></app-checkbox>
+              <app-checkbox [name]="'Twist'" (changeCheckbox)="filteringTwistMethod()"></app-checkbox>
+            </mat-expansion-panel>
+        </mat-accordion>
+        
+        
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                </mat-panel-title>
+                <mat-panel-description>
+                  <p>Specials</p>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <app-checkbox [name]="'Offers'" (changeCheckbox)="filteringOfferMethod()"></app-checkbox>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        <div class="alcohol-range" [formGroup]="alcForm">
+            <p>Alcohol range</p>
+            <div class="tag-box">
+                <input type="text" formControlName="from" class="tag" placeholder="From (%)"/>
+                <input type="text" formControlName="to" class="tag" placeholder="Until (%)"/>
+                <div class="apply" (click)="apply()">Apply</div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="reset-box">
+        <button (click)="resetFiltering()"> Reset to default</button>
+    </div>
+
+
+</div>
+
+
+
+<div class="all-activated-filters-box">
+    <div *ngIf="isFiltersActive">
+        <div class="activated-box">
+            <div class="my-2">Active Filters</div>
+        </div> 
+    </div>
+
+    <div class="is-active-box">
+    <div *ngIf="wichBeerStylesFilterSelected">
+        <div class="beer-styles-box">
+            <app-filter-tag [title]="'Beer styles'"></app-filter-tag>
+        </div>  
+    </div>
+
+    <div *ngIf="wichMethodFilterSelected">
+        <div class="method-box">
+            <app-filter-tag [title]="'Method'"></app-filter-tag>
+        </div>  
+    </div>
+
+    <div *ngIf="wichOfferFilterSelected">
+        <div class="special-offers-box">
+            <app-filter-tag [title]="'Special Offers'"></app-filter-tag>
+        </div>  
+    </div>
+
+    <!-- the error message still visible if the filters are active above -->
+    <div *ngIf="errorMessage">
+        <div class="error-message" style="width:300px">No items match your search!</div>
+    </div>
+
+    </div>
+</div>
+
+
+
+
+
+        <!-- <div class="arrow-box"><p>Beer styles</p> <img src="./assets/arrow_up.svg" alt="arrow up">
+        </div>  -->
+
+        <!-- the checkbox - checked state is static yet -->
+
+        <!-- <app-checkbox [name]="'Ipa'" (changeCheckbox)="filteringBeerStyles()"></app-checkbox>
+        <app-checkbox [name]="'Porter & Staut'" (changeCheckbox)="filteringBeerStyles()"></app-checkbox>
+        <app-checkbox [name]="'Lager & Helles'" (changeCheckbox)="filteringBeerStyles()"></app-checkbox>
+        <app-checkbox [name]="'Sour Ale & Wild Ale'" (changeCheckbox)="filteringBeerStyles()"></app-checkbox>
+        <app-checkbox [name]="'Pale ale'" (changeCheckbox)="filteringBeerStyles()"></app-checkbox>
+        <br>
+        <div class="arrow-box"><p>Method</p> <img src="./assets/arrow_up.svg" alt="arrow up">
+        </div> 
+        <app-checkbox [name]="'Mash Temp'" (changeCheckbox)="filteringMashTempMethod()"></app-checkbox>
+        <app-checkbox [name]="'Fermentation'" (changeCheckbox)="filteringFermentationMethod()"></app-checkbox>
+        <app-checkbox [name]="'Twist'" (changeCheckbox)="filteringTwistMethod()"></app-checkbox>
+        <br>
+
+        <div class="arrow-box"><p>Special products</p> <img src="./assets/arrow_up.svg" alt="arrow up">
+        </div> 
+
+        <app-checkbox [name]="'Offers'" (changeCheckbox)="filteringOfferMethod()"></app-checkbox>
+        <br> -->
+
+
+
+
+
